@@ -5,44 +5,48 @@ void cp(){
     int n ;
     cin>>n ;
 
-    vector<int> arr(n);
+    vector <int> arr(n);
 
-    for(int i = 0 ; i< n ; i++){
+    int maxi  = INT_MIN;
+    int indxmaxi = 0 ;
+
+    int mini = INT_MAX;
+    int indxmini = 0 ;
+
+    for(int i =0  ; i < n ; i++){
         cin>>arr[i];
+        if(arr[i]>maxi){
+            indxmaxi= i;
+            maxi = arr[i];
+        }
+        if(arr[i]<mini){
+             indxmini= i;
+            min = arr[i];
 
+        }
     }
+     
+    int secondmaxi  = INT_MIN ;
+    int secondmini  = INT_MAX ;
 
-
-        int count = 0 ;
-
-        for(int i  = n-1 ; i>0 ; i++){
-            if(arr[i]>arr[i-1]) continue ;
-            else {
-                while(arr[i]<arr[i-1]) {
-                    count ++ ;
-                    arr[i-1]=/2;
-                    if(arr[i]==0 && i >0 ) {
-                        cout<<-1;
-                        return ;
-                    } 
-                }
-
-            }
+    for(int i  = 0 ; i< n ; i++){
+        if(i!= indxmaxi && arr[i]<maxi ){
+            secondmaxi = max(secondmaxi,arr[i]);
+            
+        }
+        if(i!=indxmin &&  arr[i]>mini){
+            secondmini = min(secondmini,arr[i]);
         }
 
-        cout << count ; 
-
 
     }
 
-    
-
-
-   
-
+    cout<<min(max-secondmini, secondmaxi - mini)<<"\n";
+    return ;
 
 
 
+}
 
 int main() {
     ios::sync_with_stdio(false);

@@ -10,8 +10,6 @@ void cp(){
 
     cout<<i-1<<"\n";
 
-    return ;
-
 }
 
 int main() {
