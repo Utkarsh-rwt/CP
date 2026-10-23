@@ -91,7 +91,7 @@ for(int i  =1 ; i<s.size()-1 ; i++){
         
         if(s[i+1]=='a' && s[i-1]=='b')   {
             if(ba-1==ab)  {
-              s[i]=='b';
+              s[i]='b';
               cout<<s<<"\n";
               return ;
 
@@ -104,7 +104,7 @@ for(int i  =1 ; i<s.size()-1 ; i++){
       
         if(s[i+1]=='a' && s[i-1]=='a') {
             if(ba-1==ab)  {
-              s[i]=='a';
+              s[i]='a';
               cout<<s<<"\n";
               return ;
 
